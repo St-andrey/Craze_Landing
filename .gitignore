@@ -1,8 +1,11 @@
 # Dependency directory
 node_modules
 
-gulpfile.js
+#
+gulfile.js
 
-package-lock.json
+#
+package.jason
 
-package.json
+#package-lock.json
+

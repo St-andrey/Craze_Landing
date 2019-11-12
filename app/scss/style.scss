@@ -2,22 +2,107 @@
 @import "libs";
 @import "fonts";
 
-.container-outer{
-    max-width: 1640px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.container-inner{
-    margin: 0 auto;
-    max-width: 1200px;
+body {
+  font-size: 16px;
+  line-height: 26px;
+  color: $mainText;
+  font-family: $hlv400;
 }
 
+.container-outer {
+  max-width: 1640px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container-inner {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.section-title {
+  font-family: $mrd700;
+  font-size: $SectionHeaderFZ;
+  color: $SectionHeaderColor;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.section-subtitle {
+  font-family: $hlv400;
+  text-align: center;
+}
 /* === HEADER === */
-.header{
-    &__main-title{
-        font-family: $pcf;
-        font-size: 72px;
-    }
+.header {
+  &__main-title {
+    font-family: $pcf;
+    font-size: 72px;
+  }
 }
 /* === /HEADER === */
+/*-- =FEATURES= --*/
+.features {
+  background: $secondaryBg;
+  &__title {
+    margin-top: 60px;
+  }
+  &__subtitle {
+    margin-bottom: 55px;
+  }
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__card {
+    flex-basis: 33%;
+    text-align: center;
+    position: relative;
+  }
+  &__card:nth-child(-n + 3):before{
+    content: "";
+    position: absolute;
+    background: green;
+    width: 80%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  &__card:nth-child(3n + 1):after{
+    content: "";
+    position: absolute;
+    background: red;
+    width: 2px;
+    height: 80%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__card:nth-child(3n + 2):after{
+    content: "";
+    position: absolute;
+    background: yellow;
+    width: 2px;
+    height: 80%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+ 
+}
+/*.right:after{
+    content:'';
+    position: absolute;
+    background: red;
+    width:2px;
+    height: 80%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  
+
+}*/
+/*-- =/FEATURES= --*/
+/* === MAIN === */
+/* === /MAIN === */
+
 @import "media";

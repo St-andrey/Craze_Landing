@@ -48,6 +48,15 @@
     font-weight: 700;
   }
   @font-face {
+    font-family: "MyriadPro-Semibold";
+    src: url("../fonts/MiriadProSemibold/MyriadPro-Semibold.eot");
+    src: url("../fonts/MiriadProSemibold/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/MiriadProSemibold/MyriadPro-Semibold.woff") format("woff"),
+      url("../fonts/MiriadProSemibold/MyriadPro-Semibold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+  }
+  @font-face {
     font-family: "MyriadPro-Light";
     src: url("../fonts/HelveticaNeueRoman/MyriadPro-Light.eot");
     src: url("../fonts/HelveticaNeueRoman/MyriadPro-Light.eot?#iefix") format("embedded-opentype"),

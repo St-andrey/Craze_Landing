@@ -2,8 +2,22 @@
 @import "libs";
 @import "fonts";
 
+.container-outer{
+    max-width: 1640px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.container-inner{
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
-
-
-
+/* === HEADER === */
+.header{
+    &__main-title{
+        font-family: $pcf;
+        font-size: 72px;
+    }
+}
+/* === /HEADER === */
 @import "media";

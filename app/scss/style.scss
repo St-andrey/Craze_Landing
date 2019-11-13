@@ -41,6 +41,7 @@ a {
   color: $sectionHeaderColor;
   margin-bottom: 30px;
   text-align: center;
+  text-transform: capitalize;
 }
 .section-subtitle {
   font-family: $hlv400;
@@ -53,7 +54,7 @@ a {
   padding-left: 120px;
   &__text-box {
     flex-basis: 50%;
-      }
+  }
   &__main-title {
     margin-top: 147px;
     margin-bottom: 51px;
@@ -67,7 +68,7 @@ a {
   }
   &__subtitle {
     color: $secondaryText;
-    font-family: $hlv500;
+    font-family: $hlv400;
     font-size: 24px;
     margin-bottom: 26px;
     text-shadow: 2px 4px 0px rgba($textShadow, 0.25);
@@ -104,18 +105,19 @@ a {
     background: url(../img/header-img-box.png) 50% 10% no-repeat;
     background-size: contain;
     position: relative;
-    
   }
   &__img {
     position: absolute;
-    top: 88px;
-    right: 284px;
-    width: 208px;
-    height: 315px;
+    top: 72px;
+    right: 288px;
+    width: 163px;
+    height: 245px;
   }
 }
 /* === /HEADER === */
-/*-- =FEATURES= --*/
+
+/* === MAIN === */
+/* --=FEATURES=-- */
 .features {
   background: $secondaryBg;
   &__title {
@@ -137,7 +139,7 @@ a {
   &__card:nth-child(-n + 3):before {
     content: "";
     position: absolute;
-    background: green;
+    background: $borderLight;
     width: 80%;
     height: 2px;
     bottom: 0;
@@ -148,7 +150,7 @@ a {
   &__card:nth-child(3n + 1):after {
     content: "";
     position: absolute;
-    background: red;
+    background: $borderLight;
     width: 2px;
     height: 80%;
     right: 0;
@@ -159,17 +161,61 @@ a {
   &__card:nth-child(3n + 2):after {
     content: "";
     position: absolute;
-    background: yellow;
+    background: $borderLight;
     width: 2px;
     height: 80%;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
+  &__title {
+    margin-top: 31px;
+    margin-bottom: 24px;
+    color: $cardTitleColor;
+    text-transform: capitalize;
+  }
 }
 
-/*-- =/FEATURES= --*/
-/* === MAIN === */
+/* --=/FEATURES=-- */
+
+/* --=SOCIALS=-- */
+.socials {
+  background: $secondaryBg;
+  &__title {
+    margin-top: 126px;
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+  }
+  &__box {
+    margin-bottom: 61px;
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    width: 34px;
+    height: 34px;
+    background: $socialsFooterBg;
+    border-radius: 50%;
+    line-height: 34px;
+    text-align: center; 
+    transition: all 0.2s ease-in;
+    &:hover {
+      background: $blueMd;
+    }
+  }
+  &__item:not(:last-of-type){
+    margin-right: 10px;
+
+  }
+  &__link{
+    color: $secondaryText;
+    padding: 3px;
+    font-size: 19px;
+  }
+}
+/* --=/SOCIALS=-- */
 /* === /MAIN === */
 
 /* === FOOTER === */
@@ -186,6 +232,7 @@ a {
   &__nav-link {
     text-transform: capitalize;
     color: $mainText;
+    font-family: $mrd700;
   }
 }
 /* === /FOOTER === */

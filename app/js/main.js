@@ -1,9 +1,7 @@
-$(function(){
-    $('.craze-slider').slick({
+$(function () {
+    $('.slider__testimonials').slick({
         dots: true,
-        arrows: false,    });
-
-
-  
+        arrows: false,
+    });
 });
 

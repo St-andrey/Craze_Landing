@@ -1,7 +1,7 @@
 @import "vars";
 @import "libs";
 @import "fonts";
-
+/* === COMMON === */
 body {
   font-size: 16px;
   line-height: 26px;
@@ -20,6 +20,8 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+/* === /COMMON === */
+/* === GRID === */
 .container-outer {
   max-width: 1640px;
   padding-left: 20px;
@@ -29,10 +31,10 @@ a {
 .container-inner {
   margin: 0 auto;
   max-width: 1180px;
-    &--header {
-    display: flex;
-    justify-content: space-between;
-  }
+}
+.col-6 {
+  display: flex;
+  justify-content: space-between;
 }
 .section-title {
   font-family: $mrd700;
@@ -46,73 +48,73 @@ a {
   font-family: $hlv400;
   text-align: center;
 }
-
+/* === GRID === */
 /* === HEADER === */
 .header {
   background: url(../img/header-bg.png) 50% 50% no-repeat;
   background-size: cover;
   padding-left: 120px;
-  &__text-box {
+  &-text {
     flex-basis: 50%;
-  }
-  &__main-title {
-    margin-top: 147px;
-    margin-bottom: 51px;
-  }
-  &__main-link {
-    color: $secondaryText;
-    font-family: $pcf;
-    font-size: 72px;
-    text-shadow: 2px 4px 0px rgba($textShadow, 0.35);
-    text-transform: capitalize;
-  }
-  &__subtitle {
-    color: $secondaryText;
-    font-family: $hlv400;
-    font-size: 24px;
-    margin-bottom: 26px;
-    text-shadow: 2px 4px 0px rgba($textShadow, 0.25);
-  }
-  &__subtitle::first-letter {
-    text-transform: capitalize;
-  }
-  &__socials {
-    margin-bottom: 195px;
-    display: flex;
-  }
-  &__socials-box {
-    margin-right: 15px;
-    width: 53px;
-    height: 53px;
-    line-height: 53px;
-    text-align: center;
-    border-radius: 50%;
-    background: $socialsHeaderBg;
-    opacity: 0.5;
-    transition: all 0.2s ease-in;
-    &:hover,
-    &--active {
-      opacity: 1;
+    &__title {
+      margin-top: 147px;
+      margin-bottom: 51px;
+    }
+    &__link {
+      color: $secondaryText;
+      font-family: $pcf;
+      font-size: 72px;
+      text-shadow: 2px 4px 0px rgba($textShadow, 0.35);
+      text-transform: capitalize;
+    }
+    &__subtitle {
+      color: $secondaryText;
+      font-family: $hlv400;
+      font-size: 24px;
+      margin-bottom: 26px;
+      text-shadow: 2px 4px 0px rgba($textShadow, 0.25);
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+    &__socials {
+      margin-bottom: 195px;
+      display: flex;
+      &-box {
+        margin-right: 15px;
+        width: 53px;
+        height: 53px;
+        line-height: 53px;
+        text-align: center;
+        border-radius: 50%;
+        background: $socialsHeaderBg;
+        opacity: 0.5;
+        transition: all 0.2s ease-in;
+        &:hover,
+        &--active {
+          opacity: 1;
+        }
+      }
+      &-link {
+        color: $socialsHeaderColor;
+        font-size: 25px;
+        padding: 15px;
+      }
     }
   }
-  &__socials-link {
-    color: $socialsHeaderColor;
-    font-size: 25px;
-    padding: 15px;
-  }
-  &__img-box {
+  &-image {
     flex-basis: 50%;
     margin-top: 50px;
     background: url(../img/header-img-box.png) 50% 10% no-repeat;
     background-size: contain;
     position: relative;
-  }
-  &__img {
-    position: absolute;
-    top: 72px;
-    right: 288px;
-    width: 163px;
-    height: 245px;
+    &__img {
+      position: absolute;
+      bottom: 204px;
+      right: 288px;
+      width: 163px;
+      height: 245px;
+    }
   }
 }
 /* === /HEADER === */
@@ -133,70 +135,103 @@ a {
     flex-basis: 33%;
     text-align: center;
     position: relative;
-    padding: 50px 55px 60px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    &-title {
+      margin-top: 31px;
+      margin-bottom: 24px;
+      color: $cardTitleColor;
+      text-transform: capitalize;
+    }
+    &-text {
+      width: 80%;
+      margin: 0 auto;
+    }
+    &:nth-child(-n + 3):before {
+      content: "";
+      position: absolute;
+      background: $borderLight;
+      width: 80%;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:nth-child(3n + 1):after {
+      content: "";
+      position: absolute;
+      background: $borderLight;
+      width: 2px;
+      height: 80%;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(3n + 2):after {
+      content: "";
+      position: absolute;
+      background: $borderLight;
+      width: 2px;
+      height: 80%;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
-  &__card:nth-child(-n + 3):before {
-    content: "";
-    position: absolute;
-    background: $borderLight;
-    width: 80%;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+}
+/* --=/FEATURES=-- */
+/* --=ABOUT=-- */
+/* --=/ABOUT=-- */
+/* --=SLIDER=-- */
+.slider {
+  background: $secondaryBg;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+  &__testimonials {
+    &-card {
+      font-size: 24px;
+      text-transform: capitalize;
+      width: 80%;
+    }
+    &-text {
+      font-style: italic;
+      margin-bottom: 26px;
+    }
 
-  &__card:nth-child(3n + 1):after {
-    content: "";
-    position: absolute;
-    background: $borderLight;
-    width: 2px;
-    height: 80%;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &__card:nth-child(3n + 2):after {
-    content: "";
-    position: absolute;
-    background: $borderLight;
-    width: 2px;
-    height: 80%;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  &__title {
-    margin-top: 31px;
-    margin-bottom: 24px;
-    color: $cardTitleColor;
-    text-transform: capitalize;
+    &-author {
+      font-family: $mrd700;
+      color: $cardTitleColor;
+      margin-bottom: 60px;
+    }
   }
 }
 
-/* --=/FEATURES=-- */
-/* --==-- */
-/* --=/=-- */
-/* --==-- */
-/* --=/=-- */
+/* --=/SLIDER=-- */
 /* --=PRICES=-- */
 .prices {
   background: $mainBg;
   padding-top: 60px;
-  
+
   &__subtitle {
     margin-bottom: 5px;
   }
-  
+
   &__box {
-    background: blue;
-      display: flex;
-      justify-content: space-between;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    opacity: 0.5;
     position: relative;
     top: 50px;
+  }
+  &__card {
+    &-title {
+    }
+    &-price {
+    }
+    &-features {
+    }
   }
 }
 /* --=/PRICES=-- */
@@ -239,6 +274,7 @@ a {
     }
   }
 }
+
 /* --=/SOCIALS=-- */
 /* === /MAIN === */
 
@@ -252,11 +288,11 @@ a {
     width: 50%;
     margin: auto;
     justify-content: space-between;
-  }
-  &__nav-link {
-    text-transform: capitalize;
-    color: $mainText;
-    font-family: $mrd700;
+    &-link {
+      text-transform: capitalize;
+      color: $mainText;
+      font-family: $mrd700;
+    }
   }
 }
 /* === /FOOTER === */

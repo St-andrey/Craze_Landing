@@ -213,8 +213,8 @@ a {
   background: $mainBg;
   padding-top: 60px;
 
-  &__subtitle {
-    margin-bottom: 5px;
+  &__title {
+    margin-bottom: 25px;
   }
 
   &__box {
@@ -224,16 +224,73 @@ a {
     width: 100%;
     position: relative;
     top: 50px;
+    :hover {
+      transition: all 0.2s ease-in;
+      transform: scaleY(1.1);
+      transform-origin: 50%;
+    }
   }
   &__card {
+    text-align: center;
+    text-transform: capitalize;
+    width: 100%;
+    &:not(:last-child) {
+      margin-right: 4px;
+    }
     &-title {
+      font-family: $mrd700;
+      font-size: 28px;
+      color: $secondaryText;
+      padding-top: 17px;
+      padding-bottom: 17px;
+      background: $blueMd;
     }
     &-price {
+      background: $secondaryBg;
+      color: $cardTitleColor;
+      font-family: $mrd700;
+      font-size: 42px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      vertical-align: top;
+      &--sup {
+        font-size: 27px;
+        vertical-align: 40%;
+      }
     }
     &-features {
+      background: $secondaryBg;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      position: relative;
+      &:before {
+        content: "";
+        background: $borderDark;
+        display: block;
+        position: absolute;
+        width: 90%;
+        height: 1px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &-footer {
+      background: $blueMd;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    &-button {
+      color: $secondaryText;
+      background: $blueDark;
+      font-family: $mrd700;
+      font-size: 15px;
+      padding: 15px 32px;
+      text-transform: uppercase;
     }
   }
 }
+
 /* --=/PRICES=-- */
 /* --=MAIN-SOCIALS=-- */
 .main-socials {
@@ -296,5 +353,61 @@ a {
   }
 }
 /* === /FOOTER === */
+
+.my-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.my-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.my-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.my-dots li button:hover,
+.my-dots li button:focus {
+  outline: none;
+}
+.my-dots li button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid $blueMd;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  left: 0;
+}
+.my-dots li.slick-active button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background: $blueMd;
+  width: 15px;
+  height: 15px;
+}
 
 @import "media";

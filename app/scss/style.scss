@@ -7,6 +7,8 @@ body {
   line-height: 26px;
   color: $mainText;
   font-family: $hlv400;
+
+  background: $secondaryBg;
 }
 * {
   box-sizing: border-box;
@@ -32,10 +34,6 @@ a {
   margin: 0 auto;
   max-width: 1180px;
 }
-.col-6 {
-  display: flex;
-  justify-content: space-between;
-}
 .section-title {
   font-family: $mrd700;
   font-size: $sectionHeaderFZ;
@@ -48,12 +46,25 @@ a {
   font-family: $hlv400;
   text-align: center;
 }
+
+.outset-block {
+  box-shadow: 6px 6px 6px 6px rgba(#c2c2c2, 0.4), -5px -5px 5px 3px rgba(#fefefe, 0.4);
+  margin: 40px;
+}
+
 /* === GRID === */
 /* === HEADER === */
 .header {
+  border-radius: 20px;
   background: url(../img/header-bg.png) 50% 50% no-repeat;
   background-size: cover;
   padding-left: 120px;
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &-text {
     flex-basis: 50%;
     &__title {
@@ -137,16 +148,25 @@ a {
     position: relative;
     padding-top: 50px;
     padding-bottom: 60px;
+
     &-title {
       margin-top: 31px;
       margin-bottom: 24px;
       color: $cardTitleColor;
       text-transform: capitalize;
+      transition: all 0.2s ease-in;
     }
     &-text {
       width: 80%;
       margin: 0 auto;
+      transition: all 0.2s ease-in;
     }
+    &-img {
+      max-width: 50px;
+      max-height: 50px;
+      transition: all 0.2s ease-in-out;
+    }
+
     &:nth-child(-n + 3):before {
       content: "";
       position: absolute;
@@ -177,10 +197,28 @@ a {
       top: 50%;
       transform: translateY(-50%);
     }
+
+    &:hover .features__card-img,
+    {
+      transform: scale(1.2);
+    }
+    &:hover .features__card-title{
+      font-size: 20px;
+    }
+    &:hover .features__card-text {
+      font-size: 17px;
+    }
   }
 }
+
 /* --=/FEATURES=-- */
 /* --=ABOUT=-- */
+.about {
+  border-radius: 20px;
+  background: $mainBg;
+  padding-top: 60px;
+}
+
 /* --=/ABOUT=-- */
 /* --=SLIDER=-- */
 .slider {
@@ -212,6 +250,7 @@ a {
 .prices {
   background: $mainBg;
   padding-top: 60px;
+  border-radius: 20px;
 
   &__title {
     margin-bottom: 25px;
@@ -223,21 +262,51 @@ a {
     justify-content: space-between;
     width: 100%;
     position: relative;
-    top: 50px;
-    
+    top: 34px;
+    left: 2px;
   }
   &__card {
+    border-radius: 20px;
     text-align: center;
     text-transform: capitalize;
     width: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
     transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4);
     &:hover {
-      transform: scaleY(1.1);
+      box-shadow: 1px 6px 6px 3px rgba(#c2c2c2, 0.4);
+      transform: scale(1.05);
       transform-origin: 50%;
+      z-index: 100;
     }
-    &:not(:last-child) {
-      margin-right: 4px;
+
+    &:hover .prices__card-features,
+    &:hover .prices__card-price {
+      border-left: 1px solid $mainBg;
+      border-right: 1px solid $mainBg;
     }
+
+    &:hover .prices__card-title {
+      font-size: 31px;
+    }
+
+    &:hover .prices__card-price {
+      font-size: 44px;
+    }
+    &:hover .prices__card-price--sup {
+      font-size: 28px;
+    }
+
+    &:hover .prices__card-button {
+      font-size: 17px;
+      padding: 16px 34px;
+      border-radius: 16px;
+    }
+
     &-title {
       font-family: $mrd700;
       font-size: 28px;
@@ -245,6 +314,7 @@ a {
       padding-top: 17px;
       padding-bottom: 17px;
       background: $blueMd;
+      transition: font-size 0.3s ease;
     }
     &-price {
       background: $secondaryBg;
@@ -254,6 +324,7 @@ a {
       padding-top: 16px;
       padding-bottom: 16px;
       vertical-align: top;
+      transition: font-size 0.3s ease;
       &--sup {
         font-size: 27px;
         vertical-align: 40%;
@@ -261,9 +332,13 @@ a {
     }
     &-features {
       background: $secondaryBg;
+      border: none;
       padding-top: 14px;
       padding-bottom: 14px;
       position: relative;
+      overflow: hidden;
+      transition: font-size 0.3s ease;
+      cursor: pointer;
       &:before {
         content: "";
         background: $borderDark;
@@ -273,7 +348,12 @@ a {
         height: 1px;
         top: 0;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%);
+      }
+      &:hover {
+        font-size: 17px;
+        font-weight: 500;
+        color: $cardTitleColor;
       }
     }
     &-footer {
@@ -283,11 +363,14 @@ a {
     }
     &-button {
       color: $secondaryText;
-      background: $blueDark;
+      background: #3292d3;
+      border-radius: 15px;
       font-family: $mrd700;
       font-size: 15px;
       padding: 15px 32px;
       text-transform: uppercase;
+      transition: font-size 0.3s ease;
+      box-shadow: 6px 6px 6px 3px rgba(#0d74b9, 0.3), -2px -2px 1px 1px rgba(#f6f6f6, 0.2);
     }
   }
 }
@@ -296,15 +379,15 @@ a {
 /* --=MAIN-SOCIALS=-- */
 .main-socials {
   background: $secondaryBg;
+  padding-top: 126px;
+  padding-bottom: 61px;
   &__title {
-    margin-top: 126px;
   }
 
   &__subtitle {
     margin-bottom: 25px;
   }
   &__box {
-    margin-bottom: 61px;
     display: flex;
     justify-content: center;
   }
@@ -326,6 +409,7 @@ a {
     color: $secondaryText;
     font-size: 20px;
     transition: all 0.2s ease-in;
+    box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4), -5px -5px 5px 3px rgba(#f6f6f6, 1);
     &--active,
     &:hover {
       background: $blueMd;
@@ -338,18 +422,32 @@ a {
 
 /* === FOOTER === */
 .footer {
+  border-radius: 30px;
   background: $footerBg;
   padding-top: 60px;
   padding-bottom: 56px;
   &__nav {
     display: flex;
-    width: 50%;
+    width: 80%;
     margin: auto;
     justify-content: space-between;
+
+    &-item {
+    }
     &-link {
+      border: 1px solid rgba($borderDark, 0.1);
+      border-radius: 16px;
       text-transform: capitalize;
       color: $mainText;
       font-family: $mrd700;
+      padding: 15px 32px;
+      transition: all 0.2s ease-in;
+      box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4), -5px -5px 5px 3px rgba(#f6f6f6, 0.3);
+
+      &:hover {
+        color: $blueMd;
+        background: red;
+      }
     }
   }
 }
@@ -396,8 +494,8 @@ a {
   position: absolute;
   border-radius: 50%;
   border: 3px solid $blueMd;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   top: 0;
   left: 0;
 }
@@ -407,8 +505,8 @@ a {
   position: absolute;
   border-radius: 50%;
   background: $blueMd;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 @import "media";

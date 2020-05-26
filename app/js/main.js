@@ -10,8 +10,9 @@ $(function () {
     var footer = gsap.timeline()
 
     footer
-    .from('.footer', {yPercent: 50, background: 'transparent'})
-    .from('.footer__nav-item', {duration: 2, xPercent: -1000, scaleY: 0})
+    // .from('.footer', {yPercent: 50, background: 'transparent'})
+    .from('.footer__nav', 1,  {x: -300, background: 'black', justifyContent: 'flex-start'})
+//    .from('.footer__nav-item', {duration: 2, xPercent: -1000, scaleY: 0})
     .from('.footer__nav .footer__nav-link', {height: 0, x: -100, color: 'red', stagger: 2}, '+=2')
 
 var socials = gsap.timeline()

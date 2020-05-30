@@ -9,19 +9,19 @@ body {
   font-family: $hlv400;
 
   // background: $secondaryBg;
-  background: linear-gradient(90deg, rgba($mainBg, 0.6) 0%, rgba($blueLight, 0.1) 50%, rgba($mainBg, 0.6) 100%);
-  background-size: 300%;
-  animation: main 10s linear infinite;
+  background: linear-gradient(30deg, rgba($mainBg, 0.6) 0%, rgba($blueLight, 0.1) 50%, rgba($mainBg, 0.6) 100%);
+  background-size: 100%;
+  // animation: main 10s linear infinite;
 }
 
-@keyframes main {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 300%;
-  }
-}
+// @keyframes main {
+//   0% {
+//     background-position: 0%;
+//   }
+//   100% {
+//     background-position: 300%;
+//   }
+// }
 
 * {
   box-sizing: border-box;
@@ -34,6 +34,10 @@ li {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+button {
+  outline: none;
 }
 //!! particles js? vanta js? https://www.youtube.com/watch?v=TJY45v_QF34  https://www.youtube.com/watch?v=Z-qZoe9jywU
 /* === /COMMON === */
@@ -68,6 +72,12 @@ a {
 }
 
 /* === GRID === */
+
+#particles-js {
+  height: 100vh;
+  width: 100vw;
+  background: tomato;
+}
 /* === HEADER === */
 .header {
   background: url(../img/header-bg.png) 50% 50% no-repeat;
@@ -160,23 +170,24 @@ a {
     position: relative;
     padding-top: 50px;
     padding-bottom: 60px;
+    transition: 0.2s ease-in;
+
+    &-wrapper {
+      margin: 40px;
+      transition: 0.2s ease-in;
+    }
 
     &-title {
       margin-top: 31px;
       margin-bottom: 24px;
       color: $cardTitleColor;
       text-transform: capitalize;
-      transition: all 0.2s ease-in;
     }
     &-text {
-      width: 80%;
-      margin: 0 auto;
-      transition: all 0.2s ease-in;
     }
     &-img {
       max-width: 50px;
       max-height: 50px;
-      transition: all 0.2s ease-in-out;
     }
 
     &:nth-child(-n + 3):before {
@@ -209,15 +220,8 @@ a {
       top: 50%;
       transform: translateY(-50%);
     }
-
-    &:hover .features__card-img {
-      transform: scale(1.2);
-    }
-    &:hover .features__card-title {
-      font-size: 20px;
-    }
-    &:hover .features__card-text {
-      font-size: 17px;
+    &:hover .features__card-wrapper {
+      transform: scale(1.1);
     }
   }
 }
@@ -227,6 +231,172 @@ a {
 .about {
   background: $mainBg;
   padding-top: 60px;
+  padding-bottom: 60px;
+}
+.about__inner {
+  display: flex;
+}
+.about__text-box {
+  flex-basis: 50%;
+}
+.about-text {
+  text-align-last: left;
+}
+.about-text__title {
+  margin-bottom: 30px;
+}
+
+.about-text__paragraph {
+  margin-bottom: 26px;
+}
+
+.about-text__paragraph:last-child() {
+  margin-bottom: 30px;
+}
+.about-text__list {
+}
+.about-text__item {
+  padding-left: 40px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    background: url(../img/about-bullet.svg) 50% 50% no-repeat;
+    width: 42px;
+    height: 100%;
+    left: 0;
+    bottom: 2px;
+  }
+}
+.about__video-box {
+  flex-basis: 50%;
+}
+.about-video {
+  background: #000;
+  display: flex;
+  justify-content: flex-end;
+}
+.about-video__wrapper {
+  position: relative;
+}
+.about-video__poster {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 15px;
+}
+.about-video__play {
+  position: absolute;
+  width: 17%;
+  height: 43px;
+  left: 20px;
+  bottom: 21px;
+
+  background: rgba($videoControlsBg, 0.8);
+  border: none;
+  border-radius: 5px;
+}
+.play-btn {
+  cursor: pointer;
+}
+.play-btn__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+}
+.about-video__controlls {
+  position: absolute;
+  right: 20px;
+  bottom: 21px;
+  width: 72%;
+  height: 25px;
+
+  background: rgba($videoControlsBg, 0.8);
+  border-radius: 5px;
+}
+.about-video__progress-bar {
+  position: absolute;
+  width: 70%;
+  height: 15px;
+  top: 4px;
+  left: 4px;
+  z-index: 30;
+
+  border: 1px solid $videoControlsBorder;
+  border-radius: 3px;
+}
+.progress {
+}
+.progress__playing {
+  position: absolute;
+  width: 40%;
+  height: 13px;
+  z-index: 20;
+
+  background: $blueLight;
+  border-radius: 3px;
+  
+}
+.progress-buffering {
+  position: absolute;
+  width: 80%;
+  height: 13px;
+  z-index: 10;
+
+  background: $videoBufferingBar;
+  border-radius: 3px;
+  }
+.about-video__volume {
+  position: absolute;
+  height: 18px;
+  top: 3px;
+  left: 72%;
+ 
+}
+.volume {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.volume-element {
+  height: 13px;
+  width: 3px;
+
+  margin-left: 3px;
+
+  background:$blueLight;
+  border-radius: 1px;
+}
+.about-video__hd {
+  position: absolute;
+  right: 29px;
+  top: 0px;
+  width: 16px;
+  height: 16px;
+
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  border: none;
+  background: transparent;
+  color: $blueLight;
+}
+.about-video__full-screen {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+
+  border: none;
+  background: transparent;
+  font-size: 0;
+  cursor: pointer;
 }
 
 /* --=/ABOUT=-- */
@@ -240,10 +410,12 @@ a {
     &-card {
       font-size: 24px;
       text-transform: capitalize;
-      width: 80%;
     }
     &-text {
+      width: 80%;
+      margin: auto;
       font-style: italic;
+      line-height: 1.5;
       margin-bottom: 26px;
     }
 
@@ -287,27 +459,10 @@ a {
     z-index: 10;
     box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4);
     &:hover {
-      box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4);
-      transform: scale(1.02);
+      box-shadow: 3px 6px 6px 3px rgba(#c2c2c2, 0.4);
+      transform: scale(1.05);
       transform-origin: 50%;
       z-index: 100;
-    }
-
-    &:hover .prices__card-title {
-      font-size: 31px;
-    }
-
-    &:hover .prices__card-price {
-      font-size: 44px;
-    }
-    &:hover .prices__card-price--sup {
-      font-size: 28px;
-    }
-
-    &:hover .prices__card-button {
-      font-size: 16px;
-      padding: 16px 33px;
-      border-radius: 16px;
     }
 
     &-title {
@@ -407,11 +562,10 @@ a {
     height: 34px;
   }
 
-
   &__link {
     display: block;
     position: absolute;
-background: #000;
+    background: #000;
     left: 50%;
     top: 50%;
     width: 100%;
@@ -427,12 +581,12 @@ background: #000;
       background: $blueMd;
     }
   }
-  &__img{
+  &__img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-     }  
+  }
 }
 
 /* --=/SOCIALS=-- */
@@ -515,6 +669,7 @@ background: #000;
   height: 10px;
   top: 0;
   left: 0;
+  box-shadow: 3px 3px 6px 3px rgba(#c2c2c2, 0.8), -1px -1px 1px 1px rgba(#f6f6f6, 0.1);
 }
 .my-dots li.slick-active button:before {
   content: "";

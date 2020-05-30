@@ -10,11 +10,10 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body>
-
+<body">
   <!-- ===HEADER=== -->
   <div class="container-outer">
-    <header class="header outset-block">
+    <header id="particles-js" class="header outset-block">
       <div class="container-inner header-inner">
         <div class="header-text">
           <h1 class="header-text__title"><a href="#" class="header-text__link">craze</a></h1>
@@ -49,47 +48,60 @@
             Suspendisse fringilla.
           </p>
           <div class="features__box">
+
             <div class="features__card">
-              <img src="img/icon-1.png" alt="flat design" class="features__card-img">
-              <h3 class="features__card-title">flat design</h3>
-              <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse fringilla.
-              </p>
+              <div class="features__card-wrapper">
+                <img src="img/icon-1.png" alt="flat design" class="features__card-img">
+                <h3 class="features__card-title">flat design</h3>
+                <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse fringilla.
+                </p>
+              </div>
             </div>
             <div class="features__card">
-              <img src="img/icon-2.png" alt="marketable" class="features__card-img">
-              <h3 class="features__card-title">flat design</h3>
-              <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse fringilla.
-              </p>
+              <div class="features__card-wrapper">
+                <img src="img/icon-2.png" alt="marketable" class="features__card-img">
+                <h3 class="features__card-title">marketabl</h3>
+                <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse fringilla.
+                </p>
+              </div>
             </div>
             <div class="features__card">
-              <img src="img/icon-3.png" alt="edit photos" class="features__card-img">
-              <h3 class="features__card-title">flat design</h3>
-              <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse fringilla.
-              </p>
+              <div class="features__card-wrapper">
+                <img src="img/icon-3.png" alt="edit photos" class="features__card-img">
+                <h3 class="features__card-title">edit photos</h3>
+                <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse fringilla.
+                </p>
+              </div>
             </div>
             <div class="features__card">
-              <img src="img/icon-4.png" alt="edit colors" class="features__card-img">
-              <h3 class="features__card-title">flat design</h3>
-              <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse fringilla.
-              </p>
+              <div class="features__card-wrapper">
+                <img src="img/icon-4.png" alt="edit colors" class="features__card-img">
+                <h3 class="features__card-title">edit colors</h3>
+                <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse fringilla.
+                </p>
+              </div>
             </div>
             <div class="features__card">
-              <img src="img/icon-5.png" alt="user friendly" class="features__card-img">
-              <h3 class="features__card-title">flat design</h3>
-              <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse fringilla.
-              </p>
+              <div class="features__card-wrapper">
+                <img src="img/icon-5.png" alt="user friendly" class="features__card-img">
+                <h3 class="features__card-title">user friendly</h3>
+                <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse fringilla.
+                </p>
+              </div>
             </div>
             <div class="features__card">
-              <img src="img/icon-6.png" alt="100% editable" class="features__card-img">
-              <h3 class="features__card-title">100% editable</h3>
-              <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse fringilla.
-              </p>
+              <div class="features__card-wrapper">
+                <img src="img/icon-6.png" alt="100% editable" class="features__card-img">
+                <h3 class="features__card-title">100% editable</h3>
+                <p class="features__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse fringilla.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -100,23 +112,50 @@
     <div class="container-outer">
       <section class="about outset-block">
         <div class="container-inner about__inner">
-          <div class="about__text-box">
-            <h2 class="about__title section-title">whats craze all about?</h2>
-            <p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <div class="about__text-box about-text">
+            <h2 class="about-text__title section-title">whats craze all about?</h2>
+            <p class="about-text__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse fringilla fringilla nisl congue congue. Maecenas nec condimentum libero,
               at elementum mauris.
             </p>
-            <p class="about__paragraph">Phasellus eget nisi dapibus, ultricies nisl at, hendrerit
+            <p class="about-text__paragraph">Phasellus eget nisi dapibus, ultricies nisl at, hendrerit
               risusuis ornare luctus id sollicitudin ante lobortis at.
             </p>
-            <ul class="about__list">
-              <li class="about__list-items">Lorem ipsum dolor sit amet</li>
-              <li class="about__list-items">Lorem ipsum dolor sit amet consectetur elt</li>
+            <ul class="about-text__list">
+              <li class="about-text__item">Lorem ipsum dolor sit amet</li>
+              <li class="about-text__item">Lorem ipsum dolor sit amet consectetur elt</li>
             </ul>
           </div>
-          <div class="about__video-box"> </div>
+          <div class="about__video-box about-video">
+            <div class="about-video__wrapper">
+              <picture>
+                <source srcset="img/about-img.webp" type="image/webp">
+                <img class="about-video__poster" src="img/about-img.webp" alt="описание" />
+              </picture>
+              <button href="#" class="about-video__play play-btn"><img class="play-btn__img" src="img/play.svg" alt=""></button>
+              <div class="about-video__controlls">
+                <div class="about-video__progress-bar progress">
+                  <div class="progress__playing"></div>
+                  <div class="progress-buffering"></div>
+                </div>
+                <div class="about-video__volume volume">
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                  <div class="volume-element"></div>
+                </div>
+                <div class="about-video__hd">hd</div>
+                <button class="about-video__full-screen full-screen"><img src="img/full_screen.svg" alt="" class="full-screen__btn"></div></button>
+            </div>
+          </div>
         </div>
-      </section>
+    </div>
+    </section>
     </div>
     <!-- =/ABOUT= -->
     <!-- =SLIDER= -->
@@ -222,7 +261,6 @@
     <div class="container-outer">
       <section class="main-socials outset-block">
         <div class="container-inner">
-
           <h2 class="section-title main-socials__title">say hi &amp; get in touch</h2>
           <p class="section-subtitle main-socials__subtitle">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit
@@ -232,12 +270,13 @@
           <li class="main-socials__item"><a href="#" class="main-socials__link main-socials__link--active"><i
                 class="fab fa-facebook main-socials__img"></i></a>
           </li>
-          <li class="main-socials__item"><a href="#" class="main-socials__link"><i class="fab fa-pinterest main-socials__img"></i></a>
+          <li class="main-socials__item"><a href="#" class="main-socials__link"><i
+                class="fab fa-pinterest main-socials__img"></i></a>
           </li>
-          <li class="main-socials__item"><a href="#" class="main-socials__link"><i class="fab fa-google-plus main-socials__img"></i></a>
+          <li class="main-socials__item"><a href="#" class="main-socials__link"><i
+                class="fab fa-google-plus main-socials__img"></i></a>
           </li>
         </ul>
-
       </section>
     </div>
     <!-- =/SOCIALS= -->
@@ -266,10 +305,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="js/particles-app.js"></script>
   <script src="js/particles.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/libs.min.js"></script>
   <script src="js/main.js"></script>
-</body>
+  </body>
 
 </html>

@@ -162,73 +162,74 @@ button {
 .features {
   background: $secondaryBg;
   padding-top: 60px;
-  &__subtitle {
-    margin-bottom: 55px;
+}
+.features__title {
+}
+.features__subtitle {
+  margin-bottom: 55px;
+}
+.features__box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.features__card {
+  flex-basis: 33%;
+  text-align: center;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  transition: 0.2s ease-in;
+  &:nth-child(-n + 3):before {
+    content: "";
+    position: absolute;
+    background: $borderLight;
+    width: 80%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  &__box {
-    display: flex;
-    flex-wrap: wrap;
+  &:nth-child(3n + 1):after {
+    content: "";
+    position: absolute;
+    background: $borderLight;
+    width: 2px;
+    height: 80%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  &__card {
-    flex-basis: 33%;
-    text-align: center;
-    position: relative;
-    padding-top: 50px;
-    padding-bottom: 60px;
-    transition: 0.2s ease-in;
-
-    &-wrapper {
-      margin: 40px;
-      transition: 0.2s ease-in;
-    }
-
-    &-title {
-      margin-top: 31px;
-      margin-bottom: 24px;
-      color: $cardTitleColor;
-      text-transform: capitalize;
-    }
-    &-text {
-    }
-    &-img {
-      max-width: 50px;
-      max-height: 50px;
-    }
-
-    &:nth-child(-n + 3):before {
-      content: "";
-      position: absolute;
-      background: $borderLight;
-      width: 80%;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:nth-child(3n + 1):after {
-      content: "";
-      position: absolute;
-      background: $borderLight;
-      width: 2px;
-      height: 80%;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &:nth-child(3n + 2):after {
-      content: "";
-      position: absolute;
-      background: $borderLight;
-      width: 2px;
-      height: 80%;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &:hover .features__card-wrapper {
-      transform: scale(1.1);
-    }
+  &:nth-child(3n + 2):after {
+    content: "";
+    position: absolute;
+    background: $borderLight;
+    width: 2px;
+    height: 80%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
+  &:hover .features-card__wrapper {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.features-card__wrapper {
+  margin: 20px;
+  transition: 0.2s ease-in;
+}
+.features-card__img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.features-card__title {
+  margin-top: 31px;
+  margin-bottom: 24px;
+  color: $cardTitleColor;
+  text-transform: capitalize;
+}
+.features-card__text {
 }
 
 /* --=/FEATURES=-- */
@@ -408,224 +409,29 @@ button {
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: center;
-  &__testimonials {
-    &-card {
-      font-size: 24px;
-      text-transform: capitalize;
-    }
-    &-text {
-      width: 80%;
-      margin: auto;
-      font-style: italic;
-      line-height: 1.5;
-      margin-bottom: 26px;
-    }
-
-    &-author {
-      font-family: $mrd700;
-      color: $cardTitleColor;
-      margin-bottom: 60px;
-    }
-  }
+}
+.slider__testimonials {
+}
+.slider-testimonials {
+}
+.slider-testimonials__card {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+.slider-testimonials__text {
+  width: 80%;
+  margin: auto;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 26px;
+}
+.slider-testimonials__author {
+  font-family: $mrd700;
+  color: $cardTitleColor;
+  margin-bottom: 60px;
 }
 
-/* --=/SLIDER=-- */
-/* --=PRICES=-- */
-.prices {
-  background: $mainBg;
-  padding-top: 60px;
-
-  &__title {
-    margin-bottom: 25px;
-  }
-
-  &__box {
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: relative;
-    top: 34px;
-    left: 2px;
-  }
-  &__card {
-    border-radius: 20px;
-    text-align: center;
-    text-transform: capitalize;
-    width: 100%;
-    margin-left: 2px;
-    margin-right: 10px;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-    z-index: 10;
-    box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4);
-    &:hover {
-      box-shadow: 3px 6px 6px 3px rgba(#c2c2c2, 0.4);
-      transform: scale(1.05);
-      transform-origin: 50%;
-      z-index: 100;
-    }
-
-    &-title {
-      font-family: $mrd700;
-      font-size: 28px;
-      color: $secondaryText;
-      padding-top: 17px;
-      padding-bottom: 17px;
-      background: $blueMd;
-      transition: font-size 0.3s ease;
-    }
-    &-price {
-      background: $secondaryBg;
-      color: $cardTitleColor;
-      font-family: $mrd700;
-      font-size: 42px;
-      padding-top: 16px;
-      padding-bottom: 16px;
-      vertical-align: top;
-      transition: font-size 0.3s ease;
-      &--sup {
-        font-size: 27px;
-        vertical-align: 40%;
-      }
-    }
-    &-features {
-      background: $secondaryBg;
-      border: none;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      position: relative;
-      overflow: hidden;
-      transition: font-size 0.3s ease;
-      cursor: pointer;
-      &:before {
-        content: "";
-        background: $borderDark;
-        display: block;
-        position: absolute;
-        width: 90%;
-        height: 1px;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%);
-      }
-      &:hover {
-        font-size: 17px;
-        font-weight: 500;
-        color: $cardTitleColor;
-      }
-    }
-    &-footer {
-      background: $blueMd;
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    &-button {
-      color: $secondaryText;
-      background: #3292d3;
-      border-radius: 15px;
-      font-family: $mrd700;
-      font-size: 15px;
-      padding: 15px 32px;
-      text-transform: uppercase;
-      transition: font-size 0.3s ease;
-      box-shadow: 6px 6px 6px 3px rgba(#0d74b9, 0.3), -1px -1px 1px 1px rgba(#f6f6f6, 0.1);
-      &:hover {
-        background: red;
-      }
-    }
-  }
-}
-
-/* --=/PRICES=-- */
-/* --=MAIN-SOCIALS=-- */
-.main-socials {
-  background: $secondaryBg;
-  padding-top: 126px;
-  padding-bottom: 61px;
-  &__title {
-  }
-
-  &__subtitle {
-    margin-bottom: 25px;
-  }
-  &__box {
-    display: flex;
-    justify-content: space-between;
-
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  &__item {
-    position: relative;
-    width: 34px;
-    height: 34px;
-  }
-
-  &__link {
-    display: block;
-    position: absolute;
-    background: #000;
-    left: 50%;
-    top: 50%;
-    width: 100%;
-    height: 100%;
-    background: $socialsFooterBg;
-    border-radius: 50%;
-    color: $secondaryText;
-    font-size: 20px;
-    transition: all 0.2s ease-in;
-    box-shadow: 4px 4px 6px 3px rgba(#c2c2c2, 0.6), -1px -1px 1px 1px rgba(#f6f6f6, 1);
-    &--active,
-    &:hover {
-      background: $blueMd;
-    }
-  }
-  &__img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* --=/SOCIALS=-- */
-/* === /MAIN === */
-
-/* === FOOTER === */
-.footer {
-  background: $footerBg;
-  padding-top: 60px;
-  padding-bottom: 56px;
-  &__nav {
-    display: flex;
-    width: 80%;
-    margin: auto;
-    justify-content: space-between;
-
-    &-item {
-    }
-    &-link {
-      border: 1px solid rgba($borderDark, 0.1);
-      border-radius: 16px;
-      text-transform: capitalize;
-      color: $mainText;
-      font-family: $mrd700;
-      padding: 15px 32px;
-      transition: all 0.2s ease-in;
-      box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4), -1px -1px 1px 1px rgba(#f6f6f6, 0.3);
-
-      &:hover {
-        color: $blueMd;
-        background: red;
-      }
-    }
-  }
-}
-/* === /FOOTER === */
-
+/*--- Slider Customization---*/
 .my-dots {
   position: absolute;
   bottom: -25px;
@@ -682,5 +488,200 @@ button {
   width: 10px;
   height: 10px;
 }
+/* --=/SLIDER=-- */
+/* --=PRICES=-- */
+.prices {
+  background: $mainBg;
+  padding-top: 60px;
+}
+
+.prices__title {
+  margin-bottom: 25px;
+}
+
+.prices__subtitle {
+}
+.prices__box {
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  top: 17px;
+  left: 2px;
+}
+.prices__card {
+}
+.prices-card {
+  border-radius: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  margin-left: 2px;
+  margin-right: 10px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4);
+  &:hover {
+    box-shadow: 3px 6px 6px 3px rgba(#c2c2c2, 0.4);
+    transform: scale(1.03);
+    transform-origin: 50%;
+    z-index: 100;
+  }
+}
+.prices-card__title {
+  font-family: $mrd700;
+  font-size: 28px;
+  color: $secondaryText;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  background: $blueMd;
+}
+.prices-card__price {
+  background: $secondaryBg;
+  color: $cardTitleColor;
+  font-family: $mrd700;
+  font-size: 42px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  vertical-align: top;
+  &--sup {
+    font-size: 27px;
+    vertical-align: 40%;
+  }
+}
+.prices-card__features {
+  background: $secondaryBg;
+  border: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: font-size 0.3s ease;
+  cursor: pointer;
+  &:before {
+    content: "";
+    background: $borderDark;
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 1px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  &:hover {
+    font-size: 17px;
+    font-weight: 500;
+    color: $cardTitleColor;
+  }
+}
+.prices-card__footer {
+  background: $blueMd;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.prices-card__button {
+  color: $secondaryText;
+  background: #3292d3;
+  border-radius: 15px;
+  font-family: $mrd700;
+  font-size: 15px;
+  padding: 15px 32px;
+  text-transform: uppercase;
+  transition: font-size 0.3s ease;
+  box-shadow: 6px 6px 6px 3px rgba(#0d74b9, 0.3), -1px -1px 1px 1px rgba(#f6f6f6, 0.01);
+  &:hover {
+    background: red;
+  }
+}
+
+/* --=/PRICES=-- */
+/* --=MAIN-SOCIALS=-- */
+.main-socials {
+  background: $secondaryBg;
+  padding-top: 126px;
+  padding-bottom: 61px;
+}
+.main-socials__title {
+}
+.main-socials__subtitle {
+  margin-bottom: 25px;
+}
+.main-socials__box {
+  display: flex;
+  justify-content: space-between;
+
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-socials__item {
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+.main-socials__link {
+  display: block;
+  position: absolute;
+  background: #000;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background: $socialsFooterBg;
+  border-radius: 50%;
+  color: $secondaryText;
+  font-size: 20px;
+  transition: all 0.2s ease-in;
+  box-shadow: 4px 4px 6px 3px rgba(#c2c2c2, 0.6), -1px -1px 1px 1px rgba(#f6f6f6, 1);
+  &--active,
+  &:hover {
+    background: $blueMd;
+  }
+}
+.main-socials__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* --=/SOCIALS=-- */
+/* === /MAIN === */
+
+/* === FOOTER === */
+.footer {
+  background: $footerBg;
+  padding-top: 60px;
+  padding-bottom: 56px;
+}
+
+.footer-nav {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+.footer-nav__item {
+}
+.footer-nav__link {
+  border: 1px solid rgba($borderDark, 0.1);
+  border-radius: 16px;
+  text-transform: capitalize;
+  color: $mainText;
+  font-family: $mrd700;
+  padding: 15px 32px;
+  transition: all 0.2s ease-in;
+  box-shadow: 6px 6px 6px 3px rgba(#c2c2c2, 0.4), -1px -1px 1px 1px rgba(#f6f6f6, 0.2);
+  &:hover {
+    color: $blueMd;
+    background: red;
+  }
+}
+
+/* === /FOOTER === */
 
 @import "media";

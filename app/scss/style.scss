@@ -51,6 +51,8 @@ button {
 .container-inner {
   margin: 0 auto;
   max-width: 1180px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .section-title {
   font-family: $mrd700;
@@ -67,7 +69,7 @@ button {
 
 .outset-block {
   box-shadow: 6px 6px 6px 6px rgba(#c2c2c2, 0.4);
-  margin: 40px 10px;
+  margin: 40px 5px;
   border-radius: 30px;
 }
 
@@ -82,74 +84,77 @@ button {
 .header {
   background: url(../img/header-bg.png) 50% 50% no-repeat;
   background-size: cover;
-
-  &-inner {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &-text {
-    flex-basis: 50%;
-    margin-left: 120px;
-    &__title {
-      margin-top: 147px;
-      margin-bottom: 51px;
-    }
-    &__link {
-      color: $secondaryText;
-      font-family: $pcf;
-      font-size: 72px;
-      text-shadow: 2px 4px 0px rgba($textShadow, 0.35);
-      text-transform: capitalize;
-    }
-    &__subtitle {
-      color: $secondaryText;
-      font-family: $hlv400;
-      font-size: 24px;
-      margin-bottom: 26px;
-      text-shadow: 2px 4px 0px rgba($textShadow, 0.25);
-      &::first-letter {
-        text-transform: capitalize;
-      }
-    }
-    &__socials {
-      margin-bottom: 195px;
-      display: flex;
-      &-box {
-        position: relative;
-        margin-right: 15px;
-        width: 53px;
-        height: 53px;
-        border-radius: 50%;
-        background: $socialsHeaderBg;
-        opacity: 0.5;
-        transition: all 0.2s ease-in;
-        &:hover,
-        &--active {
-          opacity: 1;
-        }
-      }
-      &-link {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: block;
-        color: $socialsHeaderColor;
-        font-size: 25px;
-      }
-    }
-  }
-  &-image {
-    flex-basis: 50%;
-    position: relative;
-    &__img {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.header__text-box {
+  flex-basis: 50%;
+  margin-left: 120px;
+}
+.header-text__title {
+  margin-top: 147px;
+  margin-bottom: 51px;
+}
+.header-text__link {
+  color: $secondaryText;
+  font-family: $pcf;
+  font-size: 72px;
+  text-shadow: 2px 4px 0px rgba($textShadow, 0.35);
+  text-transform: capitalize;
+}
+.header-text__subtitle {
+  color: $secondaryText;
+  font-family: $hlv400;
+  font-size: 24px;
+  margin-bottom: 26px;
+  text-shadow: 2px 4px 0px rgba($textShadow, 0.25);
+  &::first-letter {
+    text-transform: capitalize;
   }
 }
+.header-text__socials {
+  margin-bottom: 195px;
+  display: flex;
+}
+
+.header-socials {
+}
+.header-socials__box {
+  position: relative;
+  margin-right: 15px;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: $socialsHeaderBg;
+  opacity: 0.5;
+  transition: all 0.2s ease-in;
+  &:hover,
+  &--active {
+    opacity: 1;
+  }
+}
+.header-socials__link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: $socialsHeaderColor;
+  font-size: 25px;
+}
+
+.header__image-box {
+  flex-basis: 50%;
+  position: relative;
+}
+.header-image__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 /* === /HEADER === */
 
 /* === MAIN === */
@@ -337,7 +342,6 @@ button {
 
   background: $blueLight;
   border-radius: 3px;
-  
 }
 .progress-buffering {
   position: absolute;
@@ -347,19 +351,17 @@ button {
 
   background: $videoBufferingBar;
   border-radius: 3px;
-  }
+}
 .about-video__volume {
   position: absolute;
   height: 18px;
   top: 3px;
   left: 72%;
- 
 }
 .volume {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 .volume-element {
   height: 13px;
@@ -367,7 +369,7 @@ button {
 
   margin-left: 3px;
 
-  background:$blueLight;
+  background: $blueLight;
   border-radius: 1px;
 }
 .about-video__hd {
@@ -384,7 +386,7 @@ button {
 
   border: none;
   background: transparent;
-  color: $blueLight;
+  color: yellow;
 }
 .about-video__full-screen {
   position: absolute;

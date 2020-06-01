@@ -1,13 +1,113 @@
-@media (max-width: 1200px){
-    body{background: #000;}
+@media (max-width: 1200px) {
+    body {
+        background: #000;
 
-    
-.features__card{
-    padding-top: 20px;
-    padding-bottom: 25px;
-}
+        line-height: 24px;
+    }
+    .outset-block {
+        box-shadow: 6px 6px 6px 6px rgba(#c2c2c2, 0.4);
+        margin: 20px 0px;
+        border-radius: 30px;
+    }
 
-    .about__text-box{
+    .features__subtitle {
+        margin-bottom: 30px;
+    }
+    .features__card {
+        padding-top: 10px;
+        padding-bottom: 15px;
+    }
+    .features-card__title {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .about__text-box {
         padding-right: 20px;
     }
+    .slider-testimonials__author {
+        margin-bottom: 40px;
+    }
+
+    .prices-card__price {
+        font-size: 36px;
+    }
+    .prices-card__price--sup {
+        font-size: 24px;
+        vertical-align: 30%;
+    }
+    .prices-card__features {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    body {
+        background: green;
+
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .container-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .section-title {
+        margin-bottom: 18px;
+    }
+
+    .header__text-box {
+        margin-left: 60px;
+    }
+
+    .header-text__title {
+        margin-top: 120px;
+        margin-bottom: 30px;
+    }
+
+    .header-text__subtitle {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .header-text__socials {
+        margin-bottom: 100px;
+    }
+
+    .header-socials__box {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-socials__link {
+        font-size: 17px;
+    }
+    .header-image__img {
+        width: 80%;
+        right: 5%;
+    }
+
+    .features {
+        padding-top: 40px;
+        padding-bottom: 10px;
+    }
+    .feautures-subtitle{
+        margin-bottom: 18px;
+    }
+    .features__card{
+        padding: 0;
+    }
+    .features-card__wrapper{
+        margin: 15px;
+    }
+    .features-card__img {
+        max-width: 40px;
+        max-height: 40px;
+    }.features-card__title {
+        margin-top: 14px;
+        margin-bottom: 11px;
+    }
+
+    //!!паддинги 40 с прайсинга и ниже
 }
